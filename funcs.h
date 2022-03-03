@@ -1,3 +1,4 @@
-#pragma once
+#pragma once 
+bool isDivisibleBy(int n, int d);
 
-// add prototypes here
+bool isPrime(int n);
