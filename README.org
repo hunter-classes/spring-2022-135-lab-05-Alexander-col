@@ -7,7 +7,7 @@
 * GitHub username: Alexander-col
 
 * Notes:
-
+I had issues excuting tests correctly, thank you for grading my work!
 
 
 * General instructions:
