@@ -16,6 +16,11 @@ int main()
     std::cout << isPrime(13) << std::endl;
     std::cout << isPrime(25) << std::endl;
     std::cout << "-------------------------------\n";
+    std::cout << nextPrime(5) << std::endl;
+    std::cout << nextPrime(10) << std::endl;
+    std::cout << nextPrime(15) << std::endl;
 
+    
+    
     return 0;
 }

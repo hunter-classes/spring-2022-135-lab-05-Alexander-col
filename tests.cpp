@@ -3,3 +3,6 @@
 #include "funcs.h"
 
 // add your tests here
+TEST_CASE("PART A"){
+  CHECK();
+}
