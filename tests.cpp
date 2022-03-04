@@ -4,5 +4,6 @@
 
 // add your tests here
 TEST_CASE("PART A"){
-  CHECK();
+  CHECK(isDivisibleBy(10,5) == true);
+  CHECK(isDivisibleBy(10,5) == true);
 }

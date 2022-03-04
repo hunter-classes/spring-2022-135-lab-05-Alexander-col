@@ -84,3 +84,120 @@ int nextPrime(int n)
     return answer;
 }
 
+//vvv Task D this is going to return all fo the primes numbs thare are within the interval; vvv
+int countPrimes(int a, int b)
+{
+    int nPrimeCount = 0;
+    int primeCount = 0;
+    for (int i = a; i != b; i++)
+    {
+        for (int j = 2; j !=i; j++ )
+        {
+            if(i%j == 0)
+            {
+                nPrimeCount++;
+                break;
+            }
+        }
+        if (nPrimeCount == 0)
+        {
+            primeCount++;
+        }
+        nPrimeCount = 0;
+
+    }
+    return primeCount;
+}
+//VV Task E is completed bellow and checks to see if what was given is a prim number
+bool isTwinPrime(int n)
+{
+    int lessTwo = (n-2);
+    int moreTwo = (n+2);
+    int ltc = 0;
+    int mtc = 0;
+    for (int i = 2; i != lessTwo; i++)
+    {
+        // std::cout << i << std::endl;
+        if(lessTwo%i == 0)
+        {
+            ltc++;
+        }
+    }
+    for (int i = 2; i != moreTwo; i++)
+    {
+        // std::cout << i << std::endl;
+        if(moreTwo%i == 0)
+        {
+            mtc++;
+        }
+    }
+
+    if (ltc == 0 || mtc == 0)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
+//VV Task F is completed bellow and checks to see if what was given is a prim number
+int nextTwinPrime(int n)
+{   int answer = (n+1);
+    int lessTwo = (answer-2);
+    int moreTwo = (answer+2);
+    int ltc = 0;
+    int mtc = 0;
+    int foundPrime = 0;
+    while (foundPrime != 1)
+    {
+    for (int i = 2; i != lessTwo; i++)
+    {
+        // std::cout << i << std::endl;
+        if(lessTwo%i == 0)
+        {
+            ltc++;
+        }
+    }
+    for (int i = 2; i != moreTwo; i++)
+    {
+        // std::cout << i << std::endl;
+        if(moreTwo%i == 0)
+        {
+            mtc++;
+        }
+    }
+    // std::cout << ltc << "\n" << mtc << std::endl;
+
+    if (isPrime(answer) == true && (ltc == 0 || mtc == 0))
+    {
+        foundPrime++;
+    }
+    else
+    {
+        ltc = 0;
+        mtc = 0;
+        lessTwo++;
+        moreTwo++;
+        answer++;
+    }
+    }
+    return answer;
+}
+//VV Task G is completed bellow and checks and goes backwards rather than going forwards!
+
+int largestTwinPrime(int a, int b) 
+{ 
+    int largest_twin_prime = -1; 
+    for(int i = b; i >= a; i--) 
+    { 
+        if(isTwinPrime(i)) 
+        { 
+            largest_twin_prime = nextTwinPrime(i - 1);
+            break;
+        }
+    }
+
+    return largest_twin_prime;
+}
